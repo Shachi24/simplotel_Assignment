@@ -1,14 +1,13 @@
 * {
     padding: 0px;
     margin: 0px;
-}
-
-body {
+  }
+  
+  body {
     background-image: linear-gradient(to right, #ffebb9, #ffb6ec);
-    overflow: hidden; /* Prevent scrolling */
-}
-
-nav {
+    overflow: hidden;
+  }
+  nav {
     width: 100%;
     height: 50px;
     background-color: #ff7170;
@@ -18,45 +17,52 @@ nav {
     position: fixed;
     cursor: pointer;
     font-weight: bold;
-    position: sticky;
-}
-
-.navbar {
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    width: 100%;
     text-align: center;
-    line-height: 1.5;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
     padding: 0;
-}
-
-.navbar li {
+    margin: 0;
+  }
+  
+  .navbar li {
     display: inline-block;
-    justify-content: space-between;
-    letter-spacing: 0.1cm;
-    margin: 0 10px; 
-}
-
-.navbar li img{
-    height: 20px;
-}
-
-.navbar a {
+    vertical-align: middle;
+    margin: 0 30px;
+  }
+  
+  .toogle-icon {
+    height: 25px;
+    display: block;
+  }
+  
+  .toogle-icon img {
+    height: 100%;
+    width: auto;
+  }
+  
+  .navbar a {
     text-decoration: none;
-    color: black; 
-    font-weight: bold; 
-}
-
-.container {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .container {
     display: flex;
-}
-
-h1 {
+  }
+  
+  h1 {
     letter-spacing: 0.2cm;
-    padding-left: 20px; /* Add padding to match the button */
-}
-
-button {
+    padding-left: 20px;
+  }
+  
+  button {
     width: 200px;
     height: 40px;
     display: flex;
@@ -65,35 +71,68 @@ button {
     background-color: #ff7170;
     color: white;
     border: 0;
-    padding-left: 20px; /* Add padding to match the h1 and paragraph */
-}
-
-.left {
+    margin-left: 20px;
+  }
+  
+  .left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
     font-family: "Montserrat", sans-serif;
-}
-
-.left h1,
-.left p,
-.left button {
+  }
+  
+  .left h1,
+  .left p,
+  .left button {
     margin-bottom: 20px;
     padding-left: 20px;
     text-align: left;
-}
-
-.right {
+  }
+  
+  .right {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.right img {
+  }
+  
+  .right img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+  }
+  
+/* For Responsive Design */
+
+/* For tablets (portrait) */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .left h1,
+    .left p,
+    .left button {
+      margin-top: 40px;
+      padding-left: 20px;
+      text-align: left;
+    }
+  }
+
+@media (min-width:900px) and (max-width:1100px){
+    .navbar{
+        font-size: small;
+    }
 }
+@media (min-width)and(max-width: 900px) {
+    .right img{
+        width: 70%;
+        height: 100%;
+    }
+    .toggle-icon:hover ~ .navbar  {
+        transform: translateX(-100%); 
+    }
+}
+  
